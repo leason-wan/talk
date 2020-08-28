@@ -9,8 +9,7 @@ function Vue(options) {
   this._renderProxy = initProxy(this);
   this._render = function() {
     // const { template } = options;
-    // const { render: renderStr } = compiler.compile(template);
-    // console.log(renderStr);
+    // console.log(compiler.compile(template));
     // 由于内部渲染函数较多，这里跳过执行
     const renderStr = `
       with(this){
@@ -26,8 +25,8 @@ function Vue(options) {
 }
 
 const vm = new Vue({
-  // template: '<div @click="() => console.log(123)">{{msg}}</div>'
-  template: '<h1>{{window.location.href}}</h1>'
+  template: '<div @click="() => console.log(123)">{{msg}}</div>'
+  // template: '<h1>{{window.location.href}}</h1>'
 });
 
 vm.$mount();
